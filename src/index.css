@@ -16,10 +16,11 @@
   height: 100vh;
 }
 
-.nav-bar {
-  width: 100%;
-  height: 66px;
-  background-color: #002766;
+.searchbar{
+  height: 3px;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .logo-tab {
@@ -47,7 +48,7 @@
 /* Login Page */
 
 #login-page {
-  background-image: linear-gradient(#40a9ff, #800080);
+  background-image: linear-gradient(#FF9482, #5e4a54);
   position: absolute;
   top: 0px;
   bottom: 0px;
@@ -105,6 +106,13 @@
   background-color: rgb(255, 255, 255, 0.22);
 }
 
+.backdrop{
+  background-image: linear-gradient(#40a9ff, #800080);
+  background-image: linear-gradient(#F78FAD, #FDEB82);
+  background-image: linear-gradient(#FF9482, #7D77FF);
+  background-image: linear-gradient(#FF9482, #765D69);
+}
+
 #loading-icon {
   font-size: 66px;
   position: relative;
@@ -112,3 +120,54 @@
   top: calc(50vh - 22px);
 }
 
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px  0 ;
+  background-color:#5e4a54;   
+  color: whitesmoke;
+}
+
+.header__left{
+  flex:0.3;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+.header__left > .MuiSvgIcon-root{
+  margin-left: 30px ;
+  margin-right: auto ;
+  }
+
+  .header__search{
+    flex:0.4;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+  }
+  .header__search > Input {
+    background-color: transparent;
+    border: transparent;
+    text-align: center;
+    min-width:  10px;
+    padding: 0 5px;
+    border: 1px grey solid;
+    border-radius: 6px;
+  }
+  .header__search > .MuiSvgIcon-root{
+    margin-left: 6px ;
+    margin-right: auto ;
+    }
+
+   .header__right{
+    flex:0.3;
+    display: flex;
+    align-items: flex-end;
+   }
+
+   .header__right > .MuiSvgIcon-root{
+    margin-left: auto ;
+    margin-right: 10px;
+    }

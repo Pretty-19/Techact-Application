@@ -26,9 +26,19 @@ class AppwriteService {
       return this.account.deleteSession('current');
   }
 
-  doGetCurrentUser = () => {
+  doGetCurrentUser = (email,password) => {
     return this.account.get();
   }
+   
+  doverifEmail =() =>{
+    
+  }
+
+  saveTokenInLocalStorage(tokenDetails) {
+    tokenDetails.expireDate = new Date(tokenDetails.expire * 1000);
+    localStorage.setItem('userDetails', JSON.stringify(tokenDetails));
+}
+
 }
 
 export default AppwriteService;
