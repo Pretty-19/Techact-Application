@@ -155,6 +155,7 @@
     padding: 0 5px;
     border: 1px grey solid;
     border-radius: 6px;
+    color: white;
   }
   .header__search > .MuiSvgIcon-root{
     margin-left: 6px ;
@@ -171,3 +172,43 @@
     margin-left: auto ;
     margin-right: 10px;
     }
+
+    .sidebar{
+      color: white;
+      background-color:#5e4a54;   
+      border-top: 1px solid #765D69 ;
+      max-width: 270px;
+    }
+
+    .sidebar__header{
+      display: flex;
+      border-bottom: 1px solid #5e4a54;
+      padding-bottom: 10px;
+      padding: 13px;
+      border: transparent;
+      border: 1px grey solid;
+    }
+
+    .sidebar__header > .MuiSvgIcon-root{
+      padding: 10px ;
+      margin-left: auto ;
+      border-radius: 999px;
+      color:#5e4a54 ;
+      font-size: 35px;
+      background-color: aliceblue;
+      }
+      .sidebar__info{
+       flex:1;
+      }
+      .sidebar__info > h2{
+       font-size: 29px;
+       font-weight:900;
+       margin-bottom: 5px;
+      }
+
+      .sidebar__info >h3{
+       display: flex;
+       align-items: center;
+       font-size: 13px;
+       font-weight:400;
+      }

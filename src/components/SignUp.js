@@ -1,39 +1,38 @@
 import React , {useContext,useState} from 'react';
+import {Form,Button,FormGroup,Label,Input} from "reactstrap";
+import {Link,useHistory } from "react-router-dom"
 import  {GoogleCircleFilled ,FacebookFilled} from '@ant-design/icons';
-import {Form,Button,FormGroup,Label,Input,Alert} from "reactstrap";
 import { AppwriteContext } from "./Appwrite";
-import {Link } from "react-router-dom"
+import * as ROUTES from '../constants/routes';
 
 
 const SignUp =() => {
 
      const [name, setName] = useState("")
      const [email, setEmail] = useState("");
-     const[success, setSuccess] = useState(false);
-     const[error, setError] = useState(false);
      const [password, setPassword] = useState("");
      const appwrite = useContext(AppwriteContext);
+     const history = useHistory();
 
-     const onDismissError = () => setError(false);
-     const onDismissSuccess = () => setSuccess(false);
 
      const onSubmit = (e) => {
-        e.preventDefault();
-        if (name === '' || email === '' || password === '') {
-          alert('All fields are required');
-          return;
-        }
-   
-    appwrite.doCreateAccount(email, password, name).then((result) => {
+      e.preventDefault();
+      if (name === '' || email === '' || password === '') {
+        alert('All fields are required');
+        return;
+      }
+     
+      appwrite
+        .doCreateAccount(email, password, name)
+        .then(() => {
+          history.replace(ROUTES.SIGN_IN);
+          alert('User created sucessfully');
+        })
+        .catch((error) => {
+          console.log('Error', error);
+        });
+    };
 
-        console.log('Success', result);
-        appwrite.doAccountVerification('https://localhost').then(data => setSuccess(true));
-      }).catch((error) => {
-        console.log('Error', error);
-        setError(false);
-      });
-    }
-    
     return(
     <div id="login-page">
         <div id="login-card">
@@ -59,7 +58,7 @@ const SignUp =() => {
                </FormGroup>
                <br/>
                <div className="d-grid gap-2">
-               <Button className="btn-sm"  color="success">
+               <Button className="btn-sm"  color="success" disabled={!name || !email || !password} >
                    Sign Up
                </Button>
                </div>
@@ -80,12 +79,6 @@ const SignUp =() => {
               Sign In
             </Link>
             </div>
-            <Alert color="success" isOpen={success} toggle={onDismissSuccess}>
-              Account created successfully !
-            </Alert>
-            <Alert color="error" isOpen={error} toggle={onDismissError}>
-              Account creation failed!
-            </Alert>
        </div>
     );
 }

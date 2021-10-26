@@ -1,17 +1,14 @@
 import { Appwrite } from 'appwrite';
-
-const config = {
-  projectId: process.env.REACT_APP_APPWRITE_PROJECT,
-  endpoint: process.env.REACT_APP_APPWRITE_ENDPOINT,
-};
+import { Server } from "../utils/config";
 
 const appwrite = new Appwrite();
 
 class AppwriteService {
   constructor() {
-    appwrite.setEndpoint(config.endpoint).setProject(config.projectId);
-
+    appwrite.setEndpoint(Server.endpoint).setProject(Server.project);
     this.account = appwrite.account;
+    this.database = appwrite.database;
+    this.avatars= appwrite.avatars;
   }
 
   doCreateAccount = (email, password, name) => {
@@ -26,19 +23,40 @@ class AppwriteService {
       return this.account.deleteSession('current');
   }
 
-  doGetCurrentUser = (email,password) => {
+  doGetCurrentUser = () => {
     return this.account.get();
   }
-   
-  doverifEmail =() =>{
-    
+
+  createDocument= (collectionId, data, read, write) => {
+    return this.database.createDocument(collectionId, data, read, write);
   }
 
-  saveTokenInLocalStorage(tokenDetails) {
-    tokenDetails.expireDate = new Date(tokenDetails.expire * 1000);
-    localStorage.setItem('userDetails', JSON.stringify(tokenDetails));
-}
+  getDocument= (collectionId, documentId) => {
+    return this.database.getDocument(collectionId, documentId);
+  }
 
+  listDocuments= (collectionId) => {
+    return this.database.listDocuments(collectionId);
+  }
+
+  updateDocument=(collectionId, documentId, data, read, write) => {
+    return this.database.updateDocument(collectionId, documentId, data, read, write);
+  }
+
+  deleteDocument= (collectionId, documentId) => {
+    return this.database.deleteDocument(collectionId,documentId);
+  }
+
+  createCreditAvatar =(cardname) =>{
+    return this.avatars.getCreditCard(cardname);
+  }
+
+  createFlagAvatar =(flagname) =>{
+    return this.avatars.getFlag(flagname);
+  }
+  createQrAvatar =(text,size) =>{
+    return this.avatars.getQR(text,size);
+  }
 }
 
 export default AppwriteService;

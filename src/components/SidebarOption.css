@@ -1,0 +1,26 @@
+.sidebarOption{
+    display:flex;
+    align-items: center;
+    padding-left: 2px ;
+    cursor: pointer;
+}
+
+.sidebarOption:hover{
+    opacity: 0.9;
+    background-color: #765D69;
+}
+.sidebarOption__icon{
+   margin-right: 10px;
+}
+.sidebarOption__channel{
+   padding: 10px 0;
+}
+
+.sidebarOption__hash{
+  padding: 10px;
+}
+
+.sidebarOption > h5{
+    font-weight:500;
+    font-size: small;
+}

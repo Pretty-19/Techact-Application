@@ -3,10 +3,12 @@ import {Form,Button,FormGroup,Label,Input} from "reactstrap";
 import { AppwriteContext } from "./Appwrite";
 
 
+
 const SignIn =() => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const appwrite = useContext(AppwriteContext);
+    
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -27,6 +29,7 @@ const SignIn =() => {
 <div id="login-page">
         <div id="login-card">
             <h2 style={{ color: '#5b5b5b' }}>Welcome to Techat!!</h2>
+            
             <Form className="login-form" onSubmit={onSubmit} >
                <FormGroup>
                  <Label className="col-sm-2 col-form-label col-form-label-sm " >Email</Label>
