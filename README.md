@@ -12,6 +12,7 @@
 - Sign In Page
   ![image](https://user-images.githubusercontent.com/42793632/136764411-3556f406-e842-484d-9879-ee59e083c671.png)
 - Home Page
+  ![image](https://user-images.githubusercontent.com/42793632/138814678-421481f2-599e-41ce-8fd8-d3112141d645.png)
 
 
 
