@@ -7,8 +7,14 @@
 - React Js [Docs](https://reactstrap.github.io/)
 - Appwrite.io [Docs](https://appwrite.io/docs/)
 ## Application Screenshots
-Login Page:
-![image](https://user-images.githubusercontent.com/42793632/136682187-87878ea8-13bb-432d-a3ae-333efa68368d.png)
+ - Login Page
+  ![image](https://user-images.githubusercontent.com/42793632/136764255-9d3661c1-19eb-48a9-98af-936b55ed0a6c.png) 
+- Sign In Page
+  ![image](https://user-images.githubusercontent.com/42793632/136764411-3556f406-e842-484d-9879-ee59e083c671.png)
+- Home Page
+
+
+
 ## Reference
 - JavaScript Mastery [React App](https://github.com/adrianhajdin/unichat-course)
 - Daryl Lukas [Appwrite App](https://github.com/daryllukas/expense-tracker)
